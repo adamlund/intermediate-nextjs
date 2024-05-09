@@ -20,14 +20,14 @@ export const getEventsForDashboard = memoize(
       with: {
         rsvps: true,
       },
-      limit: 5,
+      // limit: 5,
       orderBy: [asc(events.startOn)],
     })
 
     return data ?? []
   },
   {
-    persist: true,
+    persist: false,
     revalidateTags: () => ['dashboard:events'],
     suppressWarnings: true,
     log: ['datacache', 'verbose'],
@@ -44,7 +44,7 @@ export const getAllEvents = memoize(
     })
   },
   {
-    persist: true,
+    persist: false,
     revalidateTags: () => ['events'],
     suppressWarnings: true,
     logid: 'events',

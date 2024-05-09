@@ -1,5 +1,5 @@
 const RsvpsLoader = () => {
-  return '...loading'
+  return '...getting RSVPs'
 }
 
 export default RsvpsLoader

@@ -1,5 +1,5 @@
 const EventsLoader = () => {
-  return '...loading'
+  return '...getting events'
 }
 
 export default EventsLoader

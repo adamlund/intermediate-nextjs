@@ -1,11 +1,14 @@
 'use client'
 
-import { Button } from '@nextui-org/react'
+import { Button, ButtonProps } from '@nextui-org/react'
 import { useFormStatus } from 'react-dom'
 
-const Submit = ({ label, ...btnProps }) => {
-  const { pending } = useFormStatus()
+interface SubmitProps extends ButtonProps {
+  label: string;
+}
 
+const Submit = ({ label, ...btnProps }: SubmitProps) => {
+  const { pending } = useFormStatus()
   return (
     <Button {...btnProps} type="submit" isLoading={pending}>
       {label}

@@ -19,14 +19,14 @@ export const getAttendeesCountForDashboard = memoize(
       .groupBy(events.id)
       .execute()
 
-    const total = counts.reduce((acc, count) => acc + count.totalAttendees, 0)
+    const total = counts.reduce((acc, count) => acc + count?.totalAttendees, 0)
     return total
   },
   {
-    persist: true,
+    persist: false,
     revalidateTags: () => ['dashboard:attendees'],
     suppressWarnings: true,
-    log: ['datacache', 'verbose'],
+    log: ['datacache', 'verbose', 'dedupe'],
     logid: 'dashboard:attendees',
   }
 )

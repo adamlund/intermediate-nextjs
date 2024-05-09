@@ -32,6 +32,8 @@ export const signinUser = async (prevState: any, formData: FormData) => {
     password: formData.get('password'),
   })
 
+  console.log('Prevstate', prevState, 'FormState', formData);
+
   try {
     const { token } = await signin(data)
     cookies().set(COOKIE_NAME, token)

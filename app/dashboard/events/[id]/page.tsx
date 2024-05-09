@@ -8,7 +8,15 @@ const EventPage = async ({ params }) => {
 
   if (!event) redirect('/dashboard/events')
 
-  return <div>{event.name}</div>
+  return (
+    <div>
+      <div>{event.name}</div>
+      <div>{event.createdAt}</div>
+      <div>{event.status}</div>
+      <div>{event.street}</div>
+      <div>{event.startOn}</div>
+    </div>
+  )
 }
 
 export default EventPage
